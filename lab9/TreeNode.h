@@ -2,31 +2,28 @@
 
 struct TreeNode;
 
-enum OrderType {PRE_ORDER, IN_ORDER, POST_ORDER};
-
 class TreeType
 {
 public:
-  TreeType();                     // Constructor.
-  void MakeEmpty();
-  bool IsEmpty() const;
-  bool IsFull() const;
+  TreeType();
+  bool isEmpty() const;
+  bool isFull() const;
   int LengthIs() const;
-  void RetrieveItem(ItemType& item, bool& found) const;
-  void InsertItem(ItemType item);
-  void DeleteItem(ItemType item);
-  void ResetTree(OrderType order);
-  void GetNextItem(ItemType& item, OrderType order,
-       bool& finished);
-  void Print(std::ofstream& outFile) const;
+  void InsertItem(int item);
+  void DeleteItem(int item);
+  void Inorder();
+  void Preorder();
+  void Postorder();
+  bool FindAncestor(int item);
+  TreeNode CommonAncestor(int n1, int n2);
+
 private:
   TreeNode* root;
 };
 
 struct TreeNode
 {
-  ItemType info;
+  int info;
   TreeNode* left;
   TreeNode* right;
 };
-
