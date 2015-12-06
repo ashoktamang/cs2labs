@@ -11,10 +11,11 @@ public:
   ~QueType();
   void MakeEmpty();
 
-bool IsEmpty() const;
+  bool IsEmpty() const;
   bool IsFull() const;
   void Enqueue(Media newItem);
   void Dequeue(Media& item);
+  void print();
 private:
   int front;
   int rear;

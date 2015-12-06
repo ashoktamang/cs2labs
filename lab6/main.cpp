@@ -11,40 +11,56 @@ using namespace std;
 int main ()
 {
 	srand(time(NULL));
-	string title;
-	string length;
+	
+	string title, length;
 
-	Media media_object;
-	Video video_object;
-	Song song_object;
 
 	QueType mediaque;
+
 
 	ifstream song_info, video_info;
 
 	song_info.open("songs.txt");
 	video_info.open("vieos.txt");
 
-	while (! song_info.eof())
-	{
-		// getline(song_info >> title);
-		// cout << song_info;
-		// while ((song_info >> title) && (song_info >> length))
-		// {
-		// 	media_object.Initialize(title, length);
-		// 	cout << title << endl;
-		// 	cout << length << endl;
+	char response;
+	int random;
 
-		// }
-	}
+	do{
+		random = rand()%2;
+		if (random == 0){
+			song_info >> title;
+			song_info >> length;
+			Song song;
+			Media * mediaItem = &song;
+			mediaItem -> Initialize(title, length);
+			mediaque.Enqueue(*mediaItem);
+			mediaque.print();
 
-	while (! video_info.eof())
-	{
-		// while ((video_info >> title) && (video_info >> length))
-		// {
-		// 	media_object.Initialize(title, length);
-		// }
-	}
+
+		}else{
+
+			video_info >> title;
+			video_info >> length;
+			Video video;
+
+			Media * mediaItem = &video;
+			mediaItem -> Initialize(title, length);
+
+			mediaque.Enqueue(*mediaItem);
+			mediaque.print();
+
+
+		}
+
+		cout << "\n\n";
+		cout << "Do you want to repeat this? (y/n) \n";
+		cin >> response;
+
+	
+
+	}while(response == 'y');
+	
 
 	return 0;
 

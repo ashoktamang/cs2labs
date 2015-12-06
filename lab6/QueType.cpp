@@ -72,3 +72,14 @@ void QueType::Dequeue(Media& item)
     item = items[front];
   }
 }
+
+void QueType::print()
+{
+  int count = (rear + maxQue - front) % maxQue + 1;
+      for (int i = 0; i < count; i++){
+        int index = (front+i) % maxQue;
+        items[index].display();
+
+      }
+      cout << " \n \n";
+}

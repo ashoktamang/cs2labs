@@ -1,6 +1,8 @@
 #include "Media.h"
 #include <iostream>
 
+using namespace std;
+
 void Media::Initialize ( string newmedia_title, string newmedia_length)
 {
 	newmedia_title = media_title;
@@ -12,12 +14,22 @@ void Media::display()
 	std::cout << "Media to be displayed" << endl;
 }
 
+string Media::getTitle()
+{
+	return media_title;
+}
+
+string Media::getLength()
+{
+	return media_length;
+}
+
 void Song::display()
 {
-	std::cout << "Song: " << media_title << " " << media_length << endl;
+	cout << "Song: " << getTitle() << " " << getLength() << endl;
 }
 
 void Video::display()
 {
-	std::cout << "Video: " << media_title << " " << media_length << endl;
+	cout << "Video: " << getTitle() << " " << getLength() << endl;
 }

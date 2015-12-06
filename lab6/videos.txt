@@ -1,10 +1,10 @@
 Hello 4
-Arriving Somewhere but not yet 5
-Love of my life 3
-Only exception 4
-Where were you 4
-Last Christmas 6
-Cool for the summer 4
-Want you no more 2
-Love will keep us alive 4
-Rude mood 3
+Arriving_Somewhere_but_not_yet 5
+Love_of_my_life 3
+Only_exception 4
+Where_were_you 4
+Last_Christmas 6
+Cool_for_the_summer 4
+Want_you_no_more 2
+Love_will_keep_us_alive 4
+Rude_mood 3

@@ -10,17 +10,19 @@ private:
 public:
 	void Initialize ( string newmedia_title, string newmedia_length);
 	virtual void display ();
+	string getTitle();
+	string getLength();
 };
 
 class Song: public Media
 {
 public:
-	void display();
+	virtual void display();
 };
 
 
 class Video: public Media
 {
 public:
-	void display();
+	virtual void display();
 };
